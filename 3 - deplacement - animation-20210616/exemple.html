@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Déplacements latéraux et animation d'attente</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript"> 
+      window.onload = function(){
+
+        var hold = false;
+        var position = 0;
+
+        var setPosition = function(positions,selection,flip){
+          var masque = window.document.getElementById('container');
+          var image = window.document.getElementById('contenu');
+
+          masque.style.width = positions[selection].masque.width+'px';
+          masque.style.height = positions[selection].masque.height+'px';
+          image.style.top = positions[selection].image.top+'px';
+          image.style.left = positions[selection].image.left+'px';
+
+          if(flip != undefined){
+            if(flip){
+              masque.style.transform = 'scaleX(-1)';
+            }else{
+              masque.style.transform = 'scaleX(1)';
+            };
+          };
+        };
+
+        var steady = function(){
+          position = 0;
+          var positions = [{
+            masque:{
+              width:23,
+              height:37
+            },
+            image:{
+              top:0,
+              left:-27
+            }
+          }];
+
+          setPosition(positions,0);
+        };
+
+        steady();
+
+        window.onkeydown = function(event){
+
+          window.clearTimeout(hold);
+          var code = event.keyCode;
+
+          switch(code){
+            case 37:
+              //instructions
+              //alert('gauche');
+              var moveLeft = function(){
+                var masque = window.document.getElementById('container');
+                if(isNaN(parseFloat(masque.style.left))){
+                  masque.style.left = '0px';
+                };
+                masque.style.left = (parseFloat(masque.style.left) - 7) + 'px';
+              };
+              moveLeft();
+
+              position = animLeft(position);
+            break;
+            case 38:
+              //instructions
+              alert('haut');
+            break;
+            case 39:
+              //instructions
+              //alert('droite');
+              var moveRight = function(){
+                var masque = window.document.getElementById('container');
+                if(isNaN(parseFloat(masque.style.left))){
+                  masque.style.left = '0px';
+                };
+                masque.style.left = (parseFloat(masque.style.left) + 7) + 'px';
+              };
+              moveRight();
+
+              position = animRight(position);
+            break;
+            case 40:
+              //instructions
+              alert('bas');
+            break;
+          };
+
+        };
+
+        var animLeftOrRight = function(position,leftOrRight){
+
+          var positions = [{
+            masque:{
+              width:23,
+              height:37
+            },
+            image:{
+              top:0,
+              left:-564
+            }
+          },{
+            masque:{
+              width:25,
+              height:37
+            },
+            image:{
+              top:0,
+              left:-587
+            }
+          },{
+            masque:{
+              width:25,
+              height:37
+            },
+            image:{
+              top:0,
+              left:-613
+            }
+          },{
+            masque:{
+              width:23,
+              height:37
+            },
+            image:{
+              top:0,
+              left:-664
+            }
+          },{
+            masque:{
+              width:23,
+              height:37
+            },
+            image:{
+              top:0,
+              left:-687
+            }
+          },{
+            masque:{
+              width:25,
+              height:37
+            },
+            image:{
+              top:0,
+              left:-713
+            }
+          },{
+            masque:{
+              width:25,
+              height:38
+            },
+            image:{
+              top:0,
+              left:-738
+            }
+          },{
+            masque:{
+              width:23,
+              height:38
+            },
+            image:{
+              top:0,
+              left:-763
+            }
+          },{
+            masque:{
+              width:23,
+              height:37
+            },
+            image:{
+              top:0,
+              left:0
+            }
+          }];
+
+          if(position > 6){
+            position = 0;
+          };
+
+          setPosition(positions,position,leftOrRight);
+
+          return position + 1;
+        };
+
+        var animLeft = function(position){
+          return animLeftOrRight(position,true);
+        };
+
+        var animRight = function(){
+          return animLeftOrRight(position,false);
+        };
+
+        window.onkeyup = function(event){
+
+          window.clearTimeout(hold);
+          var code = event.keyCode;
+
+          steady();
+
+          var onHold = function(){
+            var positions = [{
+              masque:{
+                width:23,
+                height:37
+              },
+              image:{
+                top:0,
+                left:-27
+              }
+            },{
+              masque:{
+                width:22,
+                height:37
+              },
+              image:{
+                top:0,
+                left:-51
+              }
+            },{
+              masque:{
+                width:27,
+                height:37
+              },
+              image:{
+                top:0,
+                left:-75
+              }
+            },{
+              masque:{
+                width:30,
+                height:37
+              },
+              image:{
+                top:0,
+                left:-104
+              }
+            },{
+              masque:{
+                width:30,
+                height:37
+              },
+              image:{
+                top:0,
+                left:-136
+              }
+            },{
+              masque:{
+                width:30,
+                height:37
+              },
+              image:{
+                top:0,
+                left:-168
+              }
+            },{
+              masque:{
+                width:30,
+                height:37
+              },
+              image:{
+                top:0,
+                left:-136
+              }
+            },{
+              masque:{
+                width:30,
+                height:37
+              },
+              image:{
+                top:0,
+                left:-168
+              }
+            },{
+              masque:{
+                width:30,
+                height:37
+              },
+              image:{
+                top:0,
+                left:-136
+              }
+            },{
+              masque:{
+                width:30,
+                height:37
+              },
+              image:{
+                top:0,
+                left:-168
+              }
+            }];
+
+            var current = 0;
+            var flip = false;
+
+            var start = function(){
+              current++;
+              if(current > 9){
+                current = 0;
+                flip = !flip;
+              };
+              setPosition(positions,0);
+              hold = window.setTimeout(start,150);
+              setPosition(positions,current,flip);
+            };
+
+            hold = window.setTimeout(function(){
+              hold = window.setTimeout(start,1000);
+            },250);
+
+          };
+
+          onHold();
+        };
+
+      };
+    </script>
+    <style type="text/css">
+      .masque{
+        overflow: hidden;
+        position: absolute;
+      }
+      .masque .sprite{
+        top:0;
+        left:0;
+        position:absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Play !</h1>
+    <div>
+      <div style="width: 25px;height: 40px;" class="masque" id="container">
+        <img id="contenu" class="sprite" src="./img/sonic.gif" alt="sprite" title="sprite"/>
+      </div>
+    </div>
+    <noscript>
+      <p>Veuillez activer JavaScript</p>
+    </noscript>
+  </body>
+</html>

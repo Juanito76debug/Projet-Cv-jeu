@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Déplacement dans les 4 directions cardinales</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style type="text/css">
+    .title{
+      background-color: #FFD800;
+      border: 3px solid #FCDDC8;
+      border-radius: 50%;
+      color: #FFFFFF;
+      font-family: Arial;
+      font-size: 40px;
+      font-weight: bolder;
+      height: 150px;
+      left: 45%;
+      line-height: 150px;
+      position: absolute;
+      text-align: center;
+      text-shadow: 2px 2px 2px #CCCCCC;
+      top: -80px;
+      width: 125px;
+    }
+    .masque{
+      top:0px;
+      left:0px;
+      height:300px;
+      overflow:hidden;
+      position:absolute;
+      width:200px;
+    }
+    .sprite{
+      top:0px;
+      left:0px;
+      position:absolute;
+    }
+    </style>
+    <script type="text/javascript"> 
+      window.onload = function(){
+
+        var masque = window.document.getElementById('container');
+        var sprite = window.document.getElementById('contenu');
+
+        window.onkeydown = function(event){
+
+          var code = event.keyCode;
+
+          switch(code){
+            case 37:
+              //*instructions*
+              //alert('gauche');
+              //initialisation
+              sprite.style.top = '-285px';
+              //animation
+              if(sprite.style.left == ''){
+                sprite.style.left = '0px';
+              };
+              var decalageSprite = 192;
+              var spriteLeftPosition = parseFloat(sprite.style.left) - decalageSprite;
+              if(Math.abs(spriteLeftPosition) > (12 * decalageSprite)){
+                spriteLeftPosition = 0;
+              };
+              sprite.style.left = spriteLeftPosition + 'px';
+              //mouvement
+              var decalageMasque = 12;
+              if(masque.style.left == ''){
+                masque.style.left = '0px';
+              }
+              var masqueLeftPosition = parseFloat(masque.style.left) - decalageMasque;
+              masque.style.left = masqueLeftPosition + 'px';
+            break;
+            case 38:
+              //instructions
+              //alert('haut');
+              //initialisation
+              sprite.style.top = '-885px';
+              //animation
+              if(sprite.style.left == ''){
+                sprite.style.left = '0px';
+              };
+              var decalageSprite = 192;
+              var spriteLeftPosition = parseFloat(sprite.style.left) - decalageSprite;
+              if(Math.abs(spriteLeftPosition) > (12 * decalageSprite)){
+                spriteLeftPosition = 0;
+              };
+              sprite.style.left = spriteLeftPosition + 'px';
+              //mouvement
+              var decalageMasque = 12;
+              if(masque.style.top == ''){
+                masque.style.top = '0px';
+              }
+              var masqueTopPosition = parseFloat(masque.style.top) - decalageMasque;
+              masque.style.top = masqueTopPosition + 'px';
+            break;
+            case 39:
+              //instructions
+              //alert('droite');
+              //initialisation
+              sprite.style.top = '-575px';
+              //animation
+              if(sprite.style.left == ''){
+                sprite.style.left = '0px';
+              };
+              var decalageSprite = 192;
+              var spriteLeftPosition = parseFloat(sprite.style.left) - decalageSprite;
+              if(Math.abs(spriteLeftPosition) > (12 * decalageSprite)){
+                spriteLeftPosition = 0;
+              };
+              sprite.style.left = spriteLeftPosition + 'px';
+              //mouvement
+              var decalageMasque = 12;
+              if(masque.style.left == ''){
+                masque.style.left = '0px';
+              }
+              var masqueLeftPosition = parseFloat(masque.style.left) + decalageMasque;
+              masque.style.left = masqueLeftPosition + 'px';
+            break;
+            case 40:
+              //instructions
+              //alert('bas');
+              //initialisation
+              sprite.style.top = '0px';
+              //animation
+              if(sprite.style.left == ''){
+                sprite.style.left = '0px';
+              };
+              var decalageSprite = 192;
+              var spriteLeftPosition = parseFloat(sprite.style.left) - decalageSprite;
+              if(Math.abs(spriteLeftPosition) > (12 * decalageSprite)){
+                spriteLeftPosition = 0;
+              };
+              sprite.style.left = spriteLeftPosition + 'px';
+              //mouvement
+              var decalageMasque = 12;
+              if(masque.style.top == ''){
+                masque.style.top = '0px';
+              }
+              var masqueTopPosition = parseFloat(masque.style.top) + decalageMasque;
+              masque.style.top = masqueTopPosition + 'px';
+            break;
+          };
+
+          //fonction de réinitialisation
+          var idle = function(){
+            sprite.style.top = '0px';
+            sprite.style.left = '0px';
+          };
+
+          //gestion de l'évènement onkeyup
+          window.onkeyup = function(event){
+            idle();
+          };
+        };
+
+      };
+    </script>
+  </head>
+  <body>
+    <h1 class="title">Play !</h1>
+    <div class="background">
+      <div class="masque" id="container" style="">
+        <img id="contenu" class="sprite" src="./img/kid.png" alt="sprite" title="sprite"/>
+      </div>
+    </div>
+    <noscript>
+      <p>Veuillez activer JavaScript</p>
+    </noscript>
+  </body>
+</html>

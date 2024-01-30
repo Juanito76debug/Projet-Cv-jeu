@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Rationalisation de la structure de données</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript"> 
+      var spriteSequences = {
+        bigIdle:[{
+          masque:{
+            height:'81px',
+            width:'73px'
+          },
+          sprite:{
+            top:'0px',
+            left:'-2px',
+          }
+        },{
+          masque:{
+            height:'81px',
+            width:'73px'
+          },
+          sprite:{
+            top:'0px',
+            left:'-86px',
+          }
+        },{
+          masque:{
+            height:'81px',
+            width:'80px'
+          },
+          sprite:{
+            top:'0px',
+            left:'-167px',
+          }
+        },{
+          masque:{
+            height:'81px',
+            width:'77px'
+          },
+          sprite:{
+            top:'0px',
+            left:'-248px',
+          }
+        },{
+          masque:{
+            height:'81px',
+            width:'77px'
+          },
+          sprite:{
+            top:'0px',
+            left:'-333px',
+          }
+        },{
+          masque:{
+            height:'81px',
+            width:'77px'
+          },
+          sprite:{
+            top:'0px',
+            left:'-417px',
+          }
+        },{
+          masque:{
+            height:'81px',
+            width:'71px'
+          },
+          sprite:{
+            top:'0px',
+            left:'-590px',
+          }
+        },{
+          masque:{
+            height:'81px',
+            width:'74px'
+          },
+          sprite:{
+            top:'0px',
+            left:'-756px',
+          }
+        },{
+          masque:{
+            height:'81px',
+            width:'74px'
+          },
+          sprite:{
+            top:'0px',
+            left:'-842px',
+          }
+        },{
+          masque:{
+            height:'81px',
+            width:'74px'
+          },
+          sprite:{
+            top:'0px',
+            left:'-925px',
+          }
+        },{
+          masque:{
+            height:'81px',
+            width:'74px'
+          },
+          sprite:{
+            top:'0px',
+            left:'-1008px',
+          }
+        }
+        ]
+      }
+
+      window.onload = function(){
+
+        var container = window.document.getElementById('container');
+        var contenu = window.document.getElementById('contenu');
+
+        container.style.position = 'absolute';
+        container.style.overflow = 'hidden';
+        contenu.style.position = 'absolute';
+
+        var bigIdle = function(index){
+          container.style.width = spriteSequences.bigIdle[index].masque.width;
+          container.style.height = spriteSequences.bigIdle[index].masque.height;
+
+          contenu.style.left = spriteSequences.bigIdle[index].sprite.left;
+          contenu.style.top = spriteSequences.bigIdle[index].sprite.top;
+          var bigIdleTimeoutId = window.setTimeout(function(){
+            if(spriteSequences.bigIdle[index+1]){
+              bigIdle(index + 1);
+            }else{
+              bigIdle(0);
+            };
+          }, 250);
+        };
+
+        bigIdle(0);
+
+
+        window.onkeydown = function(event){
+
+          var code = event.keyCode;
+
+          switch(code){
+            case 37:
+              //*instructions*
+              alert('gauche');
+              
+            break;
+            case 38:
+              //instructions
+              alert('haut');
+              
+            break;
+            case 39:
+              //instructions
+              alert('droite');
+              
+            break;
+            case 40:
+              //instructions
+              alert('bas');
+              
+            break;
+          };
+
+        };
+
+      };
+    </script>
+  </head>
+  <body>
+    <h1>Play !</h1>
+    <div>
+      <div class="masque" id="container">
+        <img id="contenu" class="sprite" src="./img/pikachu.png" alt="pikachu" title="sprite"/>
+      </div>
+    </div>
+    <noscript>
+      <p>Veuillez activer JavaScript</p>
+    </noscript>
+  </body>
+</html>

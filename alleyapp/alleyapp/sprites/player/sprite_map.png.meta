@@ -1,0 +1,191 @@
+fileFormatVersion: 2
+guid: 68413d820ba844cd595b49dae2a6fdae
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: sprite_map
+    21300002: sprite_map_0
+    21300004: sprite_map_1
+    21300006: sprite_map_2
+    21300008: sprite_map_3
+    21300010: sprite_map_4
+    21300012: sprite_map_5
+    21300014: sprite_map_6
+    21300016: sprite_map_7
+    21300018: sprite_map_8
+    21300020: sprite_map_9
+    21300022: sprite_map_10
+    21300024: sprite_map_11
+    21300026: sprite_map_12
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: sprite_map_0
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 3
+        width: 479
+        height: 96
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sprite_map_1
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 203
+        width: 165
+        height: 206
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sprite_map_2
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 171
+        width: 478
+        height: 238
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sprite_map_3
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 218
+        width: 158
+        height: 188
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sprite_map_4
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 311
+        width: 265
+        height: 175
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sprite_map_5
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 118.860001
+        width: 265
+        height: 175
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sprite_map_6
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 0
+        width: 362
+        height: 114
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sprite_map_7
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 491
+        width: 304
+        height: 289
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sprite_map_8
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 794
+        width: 311
+        height: 312
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sprite_map_9
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 428
+        width: 318
+        height: 319
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sprite_map_10
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 428
+        width: 318
+        height: 319
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sprite_map_11
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 794
+        width: 311
+        height: 312
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sprite_map_12
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 790
+        width: 318
+        height: 319
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

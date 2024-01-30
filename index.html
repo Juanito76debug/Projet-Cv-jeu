@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+     #contenu {
+    align-items: center;
+        display: flex;
+        height: 540px;
+        justify-content: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    img {
+        max-width: 200%;
+        max-height: 200%;
+    }
+
+    #basketball-court {
+        position: relative;
+        width: 900px; /* ajustez la largeur du terrain selon vos besoins */
+        height: 540px; /* ajustez la hauteur du terrain selon vos besoins */
+        background: #eee;
+    }
+
+    #basketball {
+        position: absolute;
+        top: 490px;
+        left: 425px;  
+         
+    }
+
+    
+
+    #rightBasket {
+        border: 2px solid #ff0000; /* Rouge */
+        height: 37px;
+        width: 35px; /* Largeur étendue de 45 pixels */
+        position: absolute;
+        right: 140px;
+        top: 228px;
+        z-index: 99;
+
+    }
+
+    .hitbox {
+    /* Ajouter des styles pour la hitbox */
+    background-color: transparent;
+    border: 2px solid red;
+    box-sizing: border-box;
+}
+
+   /* #basketballCanvas {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        } */
+
+        /* #basketball {
+            position: absolute;
+            width: 30px; /* ajustez la taille du ballon selon vos besoins *//*
+            height: 30px;
+            background-color: orange;
+            border-radius: 50%;
+            top: 0;
+            left: 0;
+            transform: translateX(-50%);
+            transition: top 0.5s ease-out, left 0.5s ease-out;
+        } */
+
+        .sprite{
+      top:0px;
+      left:0px;
+      position:absolute;
+    }
+
+    #scoreboard {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: blue;
+        font-size: 20px;
+        z-index: 2;
+        height: 500px;
+        
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+        
+    }
+
+    th, td {
+        border: 1px solid white;
+        padding: 8px;
+        text-align: center;
+    }
+
+    </style>
+    
+
+</head>
+<body>
+    <h1>Projet CV Jeu de Basket</h1>
+    <div class="background">
+        <div id="basketball-court">
+            <div id="scoreboard">
+                <h2>Tableau de Score</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Joueur</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Joueur 1</td>
+                            <td id="scorePlayer1">0</td>
+                        </tr>
+                        
+                        <!-- Ajoutez autant de lignes que nécessaire -->
+                    </tbody>
+                </table>
+            </div>   
+            <div id="rightBasket" class ="hitbox"></div>
+            <img id="contenu" class="sprite" src="https://img.freepik.com/vecteurs-libre/conception-dessin-anime-terrain-basket-interieur-moderne-eclaire-par-projecteurs-illustration-vectorielle_1284-78055.jpg?size=626&ext=jpg&ga=GA1.2.27605542.1705678639&semt=ais" alt="sprite" title="terrain de basket" />
+            <img id="basketball" class="sprite" src="Ballon-redimensionne.png" alt="sprite" title="ballon" width="auto" height="30px">
+            <!-- <canvas id="basketballCanvas"></canvas> -->
+        </div>
+        <h2>But du jeu de basket</h2>
+        <p>Le joueur doit faire des lancés francs au panier en s'aidant du clavier. <br> Il doit tout d'abord déclencher le ballon avec la barre d'espacement.<br> Ensuite avec les flèches du haut, de la droite et du bas, il doit viser le panier de la droite. <br> Chaque fois qu'il marquera un panier, il gagnera un point. Il doit totaliser 21 points. Sinon si il le rate ça sera Game Over.<br> Bonne Chance à vous et Amusez vous bien.</p>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
